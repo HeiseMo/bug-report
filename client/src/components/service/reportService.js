@@ -3,7 +3,7 @@ import axios from 'axios';
 class ReportService {
   constructor() {
     let service = axios.create({
-      baseURL: 'http://localhost:3030/',
+      baseURL: '/',
       withCredentials: true
     });
     this.service = service;
