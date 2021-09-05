@@ -84,10 +84,10 @@ const authRoutes = require('./Routes/auth-routes');
 app.use('/api', authRoutes);
 app.use("/api/users", require("./Routes/user"));
 
-
+app.listen(PORT,()=>{
+  console.log('listening on ' + process.env.PORT || PORT)
+})
 module.exports = app;
 /*
-app.listen(PORT,()=>{
-    console.log('listening on ' + PORT)
-})
+
 */
