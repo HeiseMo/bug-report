@@ -66,13 +66,15 @@ app.use(session({
   saveUninitialized: true
 }));*/
 
-const MongoStore = require("connect-mongo")(session);
+const MongoStore = require("connect-mongo");
 app.use(
   session({
     secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: false,
-    store: new MongoStore({ mongooseConnection: mongoose.connection }),
+    store: MongoDbStore.create({
+      mongoUrl: process.env.MONGOURI
+  })
   })
 );
 
