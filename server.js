@@ -59,12 +59,22 @@ app.use(favicon(path.join(__dirname, 'client', 'public', 'favicon.ico')));
 
 // default value for title local
 app.locals.title = 'TrackMe';
-
+/*
 app.use(session({
   secret:`TheYellowWetDog`,
   resave: true,
   saveUninitialized: true
-}));
+}));*/
+
+const MongoStore = require("connect-mongo")(session);
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: false,
+    store: new MongoStore({ mongooseConnection: mongoose.connection }),
+  })
+);
 
 // USE passport.initialize() and passport.session() HERE:
 app.use(passport.initialize());
