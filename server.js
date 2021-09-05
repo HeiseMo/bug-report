@@ -74,20 +74,20 @@ app.use(passport.session());
 app.use(cors({credentials: true, origin: 'http://localhost:3000'}));
  
 app.use((req, res, next) => {
-  res.sendFile(__dirname + "/client/build/index.html");
+  res.sendFile(__dirname + "../client/build/index.html");
   next();
 });
 
 const index = require('./Routes/index');
 app.use('/', index);
-
 const authRoutes = require('./Routes/auth-routes');
-const { Http2ServerRequest } = require('http2');
 app.use('/api', authRoutes);
 app.use("/api/users", require("./Routes/user"));
 
 
 module.exports = app;
+/*
 app.listen(PORT,()=>{
     console.log('listening on ' + PORT)
 })
+*/
