@@ -1,0 +1,3 @@
+{
+    "mongoURI": "mongodb+srv://heise:4553876@cluster0.irg6m.mongodb.net/trackme?retryWrites=true&w=majority"
+  }
