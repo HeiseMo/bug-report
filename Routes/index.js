@@ -59,7 +59,7 @@ router.post('/create-report', (req, res, next) => {
       }
     })
     .catch((err) => {
-      res.json(500, {msg: 'OUTCH'});
+      res.status(500).json(err);
       throw(err);
     });
   });
