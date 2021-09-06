@@ -45,14 +45,14 @@ class App extends Component {
     this.fetchUser()
     if(this.state.loggedInUser){
       return (
-          <>
+          <Router>
               <Route path='/' render={(...props) => (
               <Dashboard userObj={this.state.loggedInUser}/>
             )} />
-          </>
+          </Router>
       );
     } else {
-      return (<>
+      return (<Router>
         <div className="auth">
           <div className="auth-wrapper">
             <div className="auth-inner">
@@ -64,7 +64,7 @@ class App extends Component {
             )} />
             </div>
           </div>
-        </div></>);
+        </div></Router>);
     }
   }
 }
