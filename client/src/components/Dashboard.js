@@ -11,7 +11,7 @@ export default class Dashboard extends Component {
     render(){
         return (
             <>
-            <Header />
+            <Header getUser={this.props.getUser}/>
                 <div class="container-fluid">
                   <div className="row">
                       <Sidebar userObj={this.props.userObj}/>

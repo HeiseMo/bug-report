@@ -47,7 +47,9 @@ class App extends Component {
       return (
           <Router>
               <Route path='/' render={(...props) => (
-              <Dashboard userObj={this.state.loggedInUser}/>
+              <Dashboard 
+              userObj={this.state.loggedInUser}
+              getUser={this.getTheUser}/>
             )} />
           </Router>
       );

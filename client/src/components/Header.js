@@ -17,7 +17,7 @@ export default class Header extends Component {
     this.service.logout()
     .then(() => {
       this.setState({ loggedInUser: null });
-      //this.props.history.push("/sign-in");
+      this.props.getUser(null);  
     })
   }
     render(){
