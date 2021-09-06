@@ -89,13 +89,11 @@ authRoutes.post('/login', (req, res, next) => {
         // save user in session
         req.login(theUser, (err) => {
             if (err) {
-                console.log("Did i enter here to save user in session?", err)
-                return res.status(500);
-            } else{
-            // We are now logged in (that's why we can also send req.user)
-            console.log("Did i enter here to We are now logged in", theUser)
-            return res.status(200).json(theUser);
-            }
+                return res
+                  .status(500)
+                  .json({ message: "Error while attempting to login" });
+              }
+              return res.json(theUser);
         });
     })(req, res, next);
 });

@@ -86,7 +86,7 @@ app.use(passport.session());
 app.use(cors({credentials: true, origin: 'http://localhost:3000'}));
  
 app.use((req, res, next) => {
-  res.sendFile(__dirname + "client/build/index.html");
+  res.sendFile(__dirname + "/client/build/index.html");
   next();
 });
 
