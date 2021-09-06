@@ -89,11 +89,12 @@ authRoutes.post('/login', (req, res, next) => {
         // save user in session
         req.login(theUser, (err) => {
             if (err) {
-                return res
-                  .status(500)
-                  .json({ message: "Error while attempting to login" });
-              }
-             return res.json(theUser);
+                res.status(500).json({ message: 'Session save went bad.' });
+                return;
+            }
+ 
+            // We are now logged in (that's why we can also send req.user)
+            res.status(200).json(theUser);
         });
     })(req, res, next);
 });
@@ -108,10 +109,13 @@ authRoutes.post('/logout', (req, res, next) => {
  
 authRoutes.get('/loggedin', (req, res, next) => {
     // req.isAuthenticated() is defined by passport
+    console.log(req.isAuthenticated())
     if (req.isAuthenticated()) {
+        console.log("I am authenticated")
         res.status(200).json(req.user);
         return;
     }
+    console.log("I am not authenticated")
     res.status(403).json({ message: 'Unauthorized' });
 });
 

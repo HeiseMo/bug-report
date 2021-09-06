@@ -86,14 +86,16 @@ app.use(passport.session());
 app.use(cors({credentials: true, origin: 'http://localhost:3000'}));
  
 app.use((req, res, next) => {
-  res.sendFile(__dirname + "/client/build/index.html");
+ //res.sendFile(__dirname + "/client/build/index.html"); //THIS IS CAUSING THE HEADER ISSUES NEED TO FIGURE THIS OUT! Im starting the server with node ./bin/www to get same errors7
   next();
 });
 
 const index = require('./Routes/index');
-app.use('/', index);
+//app.use('/', index);
 const authRoutes = require('./Routes/auth-routes');
+const reportAndMessagesRoutes = require('./Routes/reportAndMessages');
 app.use('/api', authRoutes);
+app.use('/api/report-messages', reportAndMessagesRoutes);
 app.use("/api/users", require("./Routes/user"));
 
 app.listen(PORT,()=>{

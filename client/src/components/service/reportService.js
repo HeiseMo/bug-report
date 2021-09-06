@@ -3,7 +3,7 @@ import axios from 'axios';
 class ReportService {
   constructor() {
     let service = axios.create({
-      baseURL: '/',
+      baseURL: '/api/report-messages',
       withCredentials: true
     });
     this.service = service;
