@@ -1,5 +1,6 @@
 // Header.js
 import React, {Component} from 'react';
+import { Link } from 'react-router-dom';
 import AuthService from './auth/auth-service';
 
 
@@ -26,7 +27,7 @@ export default class Header extends Component {
       <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Track Me</a>
       <ul class="navbar-nav px-3">
         <li class="nav-item text-nowrap">
-          <a onClick={this.logoutUser} class="nav-link" href="#">Sign out</a>
+        <Link to={"/"}><a onClick={this.logoutUser} class="nav-link" href="#">Sign out</a></Link>
         </li>
       </ul>
     </nav>
