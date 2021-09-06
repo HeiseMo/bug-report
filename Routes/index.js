@@ -51,10 +51,10 @@ router.post('/create-report', (req, res, next) => {
       ])
     /*Report.find()*/
     .then(reports => {
-        res.json(reports);
+        return res.json(reports);
       })
       .catch((err) => {
-        res.json(err);
+        return res.json(err);
       });
   });
 
