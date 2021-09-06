@@ -68,7 +68,7 @@ authRoutes.post('/signup', (req, res, next) => {
     });
 });
 //Login Stuff
-/*
+
 authRoutes.post('/login', (req, res, next) => {
     passport.authenticate('local', (err, theUser, failureDetails) => {
         if (err) {
@@ -86,32 +86,13 @@ authRoutes.post('/login', (req, res, next) => {
         // save user in session
         req.login(theUser, (err) => {
             if (err) {
-                return res.status(500).json({ message: 'Session save went bad.' });;
+                return res.status(500);
             }
             // We are now logged in (that's why we can also send req.user)
            return res.status(200).json(theUser);
         });
     })(req, res, next);
-});*/
-
-authRoutes.post("/login", (req, res) => {
-    passport.authenticate("local", (err, user) => {
-      if (err) {
-        return res.status(500).json({ message: "Error while authenticating" });
-      }
-      if (!user) {
-        return res.status(400).json({ message: "Wrong credentials" });
-      }
-      req.login(user, (err) => {
-        if (err) {
-          return res
-            .status(500)
-            .json({ message: "Error while attempting to login" });
-        }
-        return res.json(user);
-      });
-    })(req, res);
-  });
+});
 
 //Logout Stuff
 authRoutes.post('/logout', (req, res, next) => {
