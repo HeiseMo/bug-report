@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from 'react-router-dom';
 import AuthService from '../../components/auth/auth-service';
 
 export default class SignUp extends Component {
@@ -45,9 +46,10 @@ export default class SignUp extends Component {
                 </div>
 
                 <button type="submit" className="btn btn-primary btn-block">Sign Up</button>
-                <p className="forgot-password text-right">
+                <Link to={"/"}><p className="forgot-password text-right">
                     Already registered <a href="/sign-in">Login?</a>
-                </p>
+                </p></Link>
+
             </form>
         );
     }

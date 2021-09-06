@@ -45,28 +45,26 @@ class App extends Component {
     this.fetchUser()
     if(this.state.loggedInUser){
       return (
-          <Router>
-            <Switch>   
+          <>
               <Route path='/' render={(...props) => (
               <Dashboard userObj={this.state.loggedInUser}/>
             )} />
-            </Switch>
-          </Router>
+          </>
       );
     } else {
-      return (<Router>
+      return (<>
         <div className="auth">
           <div className="auth-wrapper">
             <div className="auth-inner">
-              <Switch>
                 <Route exact path='/'render={(props) => (
               <Login getUser={this.getTheUser}/>
             )} />
-                <Route exact path="/signup" component={Signup} />
-              </Switch>
+                  <Route exact path='/signup'render={(props) => (
+              <Signup/>
+            )} />
             </div>
           </div>
-        </div></Router>);
+        </div></>);
     }
   }
 }

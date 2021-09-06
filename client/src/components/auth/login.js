@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from 'react-router-dom';
 import AuthService from '../../components/auth/auth-service';
 
 
@@ -17,7 +18,7 @@ export default class Login extends Component {
         .then( response => {
             this.setState({ username: "", password: "" });
             this.props.getUser(response)
-            this.props.history.push("/home");
+            this.props.history.push("/");
         })
         .catch( error => console.log(error) )
       }
@@ -42,9 +43,9 @@ export default class Login extends Component {
                 </div>
 
                 <button type="submit" className="btn btn-primary btn-block">Submit</button>
-                <p className="forgot-password text-right">
-                Dont have an account? <a href="/sign-up">Click Here</a>
-                </p>
+                <Link to={"/sign-up"}><p className="forgot-password text-right">
+                Dont have an account? <a href="#">Click Here</a>
+                </p></Link>
             </form>
         );
     }
