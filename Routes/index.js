@@ -4,10 +4,11 @@ const mongoose = require('mongoose');
 var ObjectId = require('mongodb').ObjectId;
 
 /* GET home page */
+/*
 router.get('/', (req, res, next) => {
   res.render('index');
 });
-
+*/
 // Report Modal
 const Report       = require('../Model/report');
 const Message      = require('../Model/Messages')
@@ -50,12 +51,16 @@ router.post('/create-report', (req, res, next) => {
       } }
       ])
     /*Report.find()*/
-    .then(reports => {
-      if(!reports){
-        throw new Error('Record not updated.');
+    .then((user) => {
+      if (!user) {
+        res.status(404).json(user);
+      } else {
+        res.json(user);
       }
-        return res.json(reports);
-      })
+    })
+    .catch((err) => {
+      res.json(err);
+    });
   });
 
   router.get("/myreports", (req, res) => {
