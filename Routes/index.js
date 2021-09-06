@@ -51,11 +51,11 @@ router.post('/create-report', (req, res, next) => {
       ])
     /*Report.find()*/
     .then(reports => {
+      if(!reports){
+        throw new Error('Record not updated.');
+      }
         return res.json(reports);
       })
-      .catch((err) => {
-        return res.json(err);
-      });
   });
 
   router.get("/myreports", (req, res) => {
