@@ -93,7 +93,7 @@ authRoutes.post('/login', (req, res, next) => {
                   .status(500)
                   .json({ message: "Error while attempting to login" });
               }
-             //return res.json(theUser);
+             return res.json(theUser);
         });
     })(req, res, next);
 });
