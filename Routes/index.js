@@ -52,14 +52,10 @@ router.post('/create-report', (req, res, next) => {
       ])
     /*Report.find()*/
     .then((user) => {
-      if (!user) {
-        res.status(404).json(user);
-      } else {
-        res.json(user);
-      }
+        return res.json(user);
     })
     .catch((err) => {
-      res.status(500).json(err);
+      res.status(500);
       throw(err);
     });
   });
