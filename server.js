@@ -70,8 +70,8 @@ const MongoStore = require("connect-mongo");
 app.use(
   session({
     secret: process.env.SESSION_SECRET,
-    resave: false,
-    saveUninitialized: false,
+    resave: true,
+    saveUninitialized: true,
     store: MongoStore.create({
       mongoUrl: process.env.MONGOURI
   })
