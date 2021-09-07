@@ -6,7 +6,7 @@
 * [Setup](#setup)
 
 ## General info
-This project is simple Lorem ipsum dolor generator.
+This project is a Bug Tracker that helps you create, assign and follow bugs you encounter as you work.
 	
 ## Technologies
 Project is created with:
@@ -28,4 +28,13 @@ $ node server.js
 $ cd ../client
 $ npm install
 $ npm start
+```
+
+### .ENV File
+The .env file has 3 values that need to be assigned. The MONGOURI for your monodb url, PORT for the server and SESSION_SECRET for the login system.
+
+```
+MONGOURI=
+PORT=
+SESSION_SECRET=
 ```
