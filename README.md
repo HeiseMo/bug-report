@@ -17,13 +17,13 @@ Project is created with:
 ## Setup
 To run this project, install it locally using npm:
 
-### BackEnd
+### Server
 ```
 $ npm install
 $ node server.js
 ```
 
-### FrontEnd
+### Client
 ```
 $ cd ../client
 $ npm install
