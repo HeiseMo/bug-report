@@ -11,7 +11,7 @@ export default class Sidebar extends Component {
             <ul class="nav flex-column">
               <Link to={"/"}>
               <li class="nav-item">
-                <a class="nav-link active" href="#">
+                <a class="nav-link" href="#">
                 <img src="https://img.icons8.com/material-outlined/24/000000/home--v2.png"/>
                   Dashboard <span class="sr-only">(current)</span>
                 </a>

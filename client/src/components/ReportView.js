@@ -56,7 +56,7 @@ export default class Report extends Component {
         let checkIfEmpty = this.props.report;
         if(checkIfEmpty == 0){
             return (
-                <div className="report">
+                <div className="report-closed">
                     Click on a report.
                 </div>
     )
@@ -85,10 +85,10 @@ export default class Report extends Component {
                             <form>
                                 <div className="form-label">
                                 <label for="status">Status</label>
-                            <select  value={this.state.status}  onChange={( e => this.handleChange(e))} className={(this.props.report.status == "Open") ? "badge badge-success selectpicker" : (this.props.report.status == "Closed") ? "badge badge-danger selectpicker" : (this.props.report.status == "Pending") ? "badge badge-warning selectpicker" : ""} id="status" name="status">
-                                <option value="Open" className="option badge badge-success" selected={(this.props.report.status == "Open") ? "selected" : ""} >Open</option>
+                            <select  value={this.state.status}  onChange={( e => this.handleChange(e))} className={(this.props.report.status == "Open") ? "badge badge-danger selectpicker" : (this.props.report.status == "Closed") ? "badge badge-success selectpicker" : (this.props.report.status == "Pending") ? "badge badge-warning selectpicker" : ""} id="status" name="status">
+                                <option value="Open" className="option badge badge-danger" selected={(this.props.report.status == "Open") ? "selected" : ""} >Open</option>
                                 <option value="Pending" className="option badge badge-warning" selected={(this.props.report.status == "Pending") ? "selected" : ""}>Pending</option>
-                                <option value="Closed" className="option badge badge-danger" selected={(this.props.report.status == "Closed") ? "selected" : ""}>Closed</option>
+                                <option value="Closed" className="option badge badge-success" selected={(this.props.report.status == "Closed") ? "selected" : ""}>Closed</option>
                             </select>
                             </div>
                             <div className="form-label">

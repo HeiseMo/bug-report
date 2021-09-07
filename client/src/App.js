@@ -64,6 +64,9 @@ class App extends Component {
                   <Route exact path='/sign-up'render={(props) => (
               <Signup/>
             )} />
+                <Route exact path='/login'render={(props) => (
+              <Login getUser={this.getTheUser}/>
+            )} />
             </div>
           </div>
         </div></Router>);
