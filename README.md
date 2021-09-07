@@ -11,7 +11,8 @@ This project is a Bug Tracker that helps you create, assign and follow bugs you 
 ## Technologies
 Project is created with:
 * React.js
-* Node.Js
+* Bootstrap
+* Node.js
 * MongoDB
 	
 ## Setup
