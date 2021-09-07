@@ -18,11 +18,14 @@ Project is created with:
 To run this project, install it locally using npm:
 
 ### BackEnd
+```
 $ npm install
 $ node server.js
-
+```
 
 ### FrontEnd
+```
 $ cd ../client
 $ npm install
 $ npm start
+```
